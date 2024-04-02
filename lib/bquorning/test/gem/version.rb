@@ -3,7 +3,7 @@
 module Bquorning
   module Test
     module Gem
-      VERSION = "0.5.2"
+      VERSION = "0.6.0"
     end
   end
 end
