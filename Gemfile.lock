@@ -1,0 +1,18 @@
+PATH
+  remote: .
+  specs:
+    bquorning-test-gem (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  arm64-darwin-22
+  ruby
+
+DEPENDENCIES
+  bquorning-test-gem!
+
+BUNDLED WITH
+   2.5.5

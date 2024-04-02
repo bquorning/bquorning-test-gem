@@ -1,0 +1,29 @@
+name: Publish
+
+on:
+  push:
+    branches: main
+    paths: lib/bquorning/test/gem/version.rb
+
+jobs:
+  publish:
+    name: Publish to RubyGems
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: ruby
+      - uses: rubygems/release-gem@v1
+      - name: Edit a file
+        run: |
+          date >> LICENSE
+      - name: Commit version change
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add LICENSE
+          git commit -m "Done"
+          git push
