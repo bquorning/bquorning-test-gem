@@ -20,6 +20,10 @@ jobs:
           bundler-cache: true
           ruby-version: ruby
       - uses: rubygems/release-gem@v1
+      - name: Create a GH release
+        run:
+          tag=$(git tag --points-at @)
+          gh release create $tag --notes-file relnotes/$tag
       - name: Edit a file
         run: |
           date >> LICENSE
