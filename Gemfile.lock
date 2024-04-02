@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bquorning-test-gem (0.3.0)
+    bquorning-test-gem (0.4.0)
 
 GEM
   remote: https://rubygems.org/
